@@ -1,1 +1,15 @@
+# Eureka Client Configuration (for Service Discovery)
+eureka:
+  # Instance Configuration for Eureka
+  instance:
+    prefer-ip-address: true  # This makes the service register its IP address instead of hostname with Eureka. Useful in certain environments (e.g., Docker).
+
+  # Eureka Client Configuration
+  client:
+    fetch-registry: true  # The service will fetch the registry (list of available services) from Eureka.
+    register-with-eureka: true  # The service will register itself with Eureka for discovery by other services.
+
+  # Eureka Server URL
+  service-url:
+    defaultZone: http://localhost:8761/eureka  # URL of the Eureka Server where this service will register itself. Ensure Eureka server is running on this URL.
 
